@@ -1,0 +1,17 @@
+%% Read data from file
+
+data = load('Data2Use.asc');
+
+%% Interp data
+
+factorInterp = 2;
+
+X = 1:1:size(m,1);
+Y = 1:1:size(m,2);
+[XX,YY] = meshgrid(X,Y);
+
+Xq = 1:0.5:size(m,1);
+Yq = 1:0.5:size(m,2);
+[XqXq,YqYq] = meshgrid(Xq,Yq);
+
+mInterp = interpn(XX',YY',m,XqXq,YqYq,'linear');

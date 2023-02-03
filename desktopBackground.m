@@ -1,3 +1,10 @@
+%% clc
+
+clc;
+clear all;
+close all;
+
+
 %% Read data from file
 
 data = load('Data2Use.asc');
@@ -39,10 +46,11 @@ end
 
 %% Definition of useful colors
 
-blue = '#000073';
-clearBlue = '#061090';
+blue = '#000080';
+clearBlue = '#00FFFF';
 yellow = '#FAFF55';
 red = '#EA0000';
+black = '#000000';
 
 %% Custom colormaps
 
@@ -50,22 +58,30 @@ red = '#EA0000';
 positiveColorMap = customcolormap([0,1],{red,yellow},512);
 
 %For negative values
-negativeColorMap = customcolormap([0,1],{yellow,blue},512);
+negativeColorMap = customcolormap([0,1],{clearBlue,blue},512);
 
-%% Figure
+%% Print data
 
-figure();
+titre = ['Brest, ',typeInterp];
+
+figure('name',titre);
+
 s = surface(positiveData);
 view(3);
 axis off; grid off;
 s.EdgeColor = 'none';
-colorbar('southoutside');
 colormap(positiveColorMap);
+caxis([min(min(positiveData)),max(max(positiveData))]);
+
 freezeColors();
 hold on;
+
 s2 = surface(negativeData);
 view(3);
 axis off; grid off;
 s2.EdgeColor = 'none';
-colorbar('southoutside');
 colormap(negativeColorMap);
+caxis([min(min(negativeData)),0]);
+
+title = titre;
+

@@ -51,3 +51,21 @@ positiveColorMap = customcolormap([0,1],{red,yellow},512);
 
 %For negative values
 negativeColorMap = customcolormap([0,1],{yellow,blue},512);
+
+%% Figure
+
+figure();
+s = surface(mPositive);
+view(3);
+axis off; grid off;
+s.EdgeColor = 'none';
+colorbar('southoutside');
+colormap(myColorMapPositive);
+freezeColors();
+hold on;
+s2 = surface(mNegative);
+view(3);
+axis off; grid off;
+s2.EdgeColor = 'none';
+colorbar('southoutside');
+colormap(myColorMapNegative);

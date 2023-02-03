@@ -9,12 +9,12 @@ factorInterp = 2;
 typeInterp = 'linear';
 
 % Determining of X,Y,Xq and Yq
-X = 1:1:size(m,1);
-Y = 1:1:size(m,2);
+X = 1:1:size(data,1);
+Y = 1:1:size(data,2);
 [XX,YY] = meshgrid(X,Y);
 
-Xq = 1:1/factorInterp:size(m,1);
-Yq = 1:1/factorInterp:size(m,2);
+Xq = 1:1/factorInterp:size(data,1);
+Yq = 1:1/factorInterp:size(data,2);
 [XqXq,YqYq] = meshgrid(Xq,Yq);
 
 % Interpolation
@@ -55,17 +55,17 @@ negativeColorMap = customcolormap([0,1],{yellow,blue},512);
 %% Figure
 
 figure();
-s = surface(mPositive);
+s = surface(positiveData);
 view(3);
 axis off; grid off;
 s.EdgeColor = 'none';
 colorbar('southoutside');
-colormap(myColorMapPositive);
+colormap(positiveColorMap);
 freezeColors();
 hold on;
-s2 = surface(mNegative);
+s2 = surface(negativeData);
 view(3);
 axis off; grid off;
 s2.EdgeColor = 'none';
 colorbar('southoutside');
-colormap(myColorMapNegative);
+colormap(negativeColorMap);

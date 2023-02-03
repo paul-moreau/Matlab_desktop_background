@@ -36,3 +36,18 @@ for i = 1:1:size(interpData,1)
         end
     end
 end
+
+%% Definition of useful colors
+
+blue = '#000073';
+clearBlue = '#061090';
+yellow = '#FAFF55';
+red = '#EA0000';
+
+%% Custom colormaps
+
+% For positive values
+positiveColorMap = customcolormap([0,1],{red,yellow},512);
+
+%For negative values
+negativeColorMap = customcolormap([0,1],{yellow,blue},512);

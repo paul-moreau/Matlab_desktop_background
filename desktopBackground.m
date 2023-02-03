@@ -47,7 +47,7 @@ end
 %% Definition of useful colors
 
 blue = '#000080';
-clearBlue = '#00FFFF';
+cyan = '#00FFFF';
 yellow = '#FAFF55';
 red = '#EA0000';
 black = '#000000';
@@ -57,8 +57,8 @@ black = '#000000';
 % For positive values
 positiveColorMap = customcolormap([0,1],{red,yellow},512);
 
-%For negative values
-negativeColorMap = customcolormap([0,1],{clearBlue,blue},512);
+% For negative values
+negativeColorMap = customcolormap([0,1],{cyan,blue},512);
 
 %% Print data
 

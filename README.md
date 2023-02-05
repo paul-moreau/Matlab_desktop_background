@@ -2,4 +2,4 @@
 
 My goal is to have a new background for my computer's desktop and I come from Brest so ... 
 
-![The result of my work on these data](finaltResult.png "My final wallpaper for my desktop")
+![The result of my work on these data](finalResult.png "My final wallpaper for my desktop")
